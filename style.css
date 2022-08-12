@@ -58,7 +58,7 @@ body {
     margin-left: 19px;
 }
 .itens-card {
-    width: 172px;
+    width: 175px;
     height: 216px;
     background-color: #ffffff;
     box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
@@ -66,6 +66,9 @@ body {
     padding: 18px 14px;
     font-size: 16px;
     margin-right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .itens-card h1 {
     color: #333333;
@@ -74,7 +77,6 @@ body {
 }
 .itens-card h2 {
     font-weight: 400;
-    margin-top: 12px;
 }
 .itens-card p {
     font-size: 15px;
@@ -106,5 +108,19 @@ body {
     margin-top: 6px;
 }
 .borda {
-    border: 5px solid green;
+    border: 5px solid #32B72F;
+}
+.desc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+ion-icon {
+    color: #32B72F;
+    font-size: 19px;
+    display: none;
+}
+.mostra {
+    display: initial;
 }
