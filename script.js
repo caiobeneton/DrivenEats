@@ -51,4 +51,3 @@ function selecionaS(item, item2) {
     const card = document.querySelector(item)
     card.classList.add('borda')
 }
-
