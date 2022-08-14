@@ -1,6 +1,9 @@
 let checkP = null;
 let checkB = null;
 let checkS = null;
+let precoPrato;
+let precoBebida;
+let precoSobremesa;
 
 function seleciona(item, item2) {
 
@@ -20,6 +23,7 @@ function seleciona(item, item2) {
     card.classList.add('borda')
 
     checkP = document.querySelector('.pratos .borda')
+    precoPrato = card.querySelector('span').innerHTML
     habilitaBotao()
 }
 function selecionaB(item, item2) {
@@ -41,6 +45,7 @@ function selecionaB(item, item2) {
     card.classList.add('borda')
 
     checkB = document.querySelector('.bebidas .borda')
+    precoBebida = card.querySelector('span').innerHTML
     habilitaBotao()
 }
 function selecionaS(item, item2) {
@@ -62,6 +67,7 @@ function selecionaS(item, item2) {
     card.classList.add('borda')
 
     checkS = document.querySelector('.sobremesas .borda')
+    precoSobremesa = card.querySelector('span').innerHTML
     habilitaBotao()
 }
 
@@ -75,8 +81,11 @@ function habilitaBotao() {
 }
 
 function redireciona() {
+    let total = Number(precoPrato) + Number(precoBebida) + Number(precoSobremesa)
+    let totalStr = total.toFixed(2)
 
-    const uri = 'Olá, gostaria de fazer o pedido: \n- Prato: Frango Yin Yang \n- Bebida: Coquinha Gelada \n- Sobremesa: Pudim \nTotal: R$ 27.70' 
+    const uri = 'Olá, gostaria de fazer o pedido: \n- Prato: Frango Yin Yang \n- Bebida: Coquinha Gelada \n- Sobremesa: Pudim \nTotal: R$ ' + totalStr 
+
     const encoded = encodeURIComponent(uri)
 
     if (checkP !== null && checkB !== null && checkS !== null) {
