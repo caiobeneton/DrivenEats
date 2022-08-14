@@ -1,3 +1,7 @@
+let checkP = null;
+let checkB = null;
+let checkS = null;
+
 function seleciona(item, item2) {
 
     const Botselecionado = document.querySelector('.pratos .borda')
@@ -14,6 +18,9 @@ function seleciona(item, item2) {
 
     const card = document.querySelector(item)
     card.classList.add('borda')
+
+    checkP = document.querySelector('.pratos .borda')
+    habilitaBotao()
 }
 function selecionaB(item, item2) {
 
@@ -32,6 +39,9 @@ function selecionaB(item, item2) {
 
     const card = document.querySelector(item)
     card.classList.add('borda')
+
+    checkB = document.querySelector('.bebidas .borda')
+    habilitaBotao()
 }
 function selecionaS(item, item2) {
 
@@ -50,4 +60,26 @@ function selecionaS(item, item2) {
 
     const card = document.querySelector(item)
     card.classList.add('borda')
+
+    checkS = document.querySelector('.sobremesas .borda')
+    habilitaBotao()
+}
+
+function habilitaBotao() {
+    if (checkP !== null && checkB !== null && checkS !== null) {
+        const confirma = document.querySelector('.barra-wrapper')
+        confirma.classList.add('ativo')
+        const texto = document.querySelector('.barra-texto')
+        texto.innerHTML = 'Fechar pedido'
+    }
+}
+
+function redireciona() {
+
+    const uri = 'Olá, gostaria de fazer o pedido: \n- Prato: Frango Yin Yang \n- Bebida: Coquinha Gelada \n- Sobremesa: Pudim \nTotal: R$ 27.70' 
+    const encoded = encodeURIComponent(uri)
+
+    if (checkP !== null && checkB !== null && checkS !== null) {
+        window.location.href = "https://wa.me/?text=" + encoded;
+    }
 }
